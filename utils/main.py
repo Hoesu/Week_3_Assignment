@@ -119,7 +119,7 @@ if __name__ == '__main__':
     dataset = OutlierDataset(config)
     if config['train']:
 
-        ## TODO 5: 훈련을 위한 데이터셋에 train/val 스플릿을 시켜봅시다!
+        ## TODO 2-1: 훈련을 위한 데이터셋에 train/val 스플릿을 시켜봅시다!
         ## ----------------------------------------------------------------
         ## 1. len(dataset)을 사용하면 OutlierDataset의 __len__() 메소드를 호출합니다.
         ## 2. config에서 'split_ratio' 값을 받아옵시다.
@@ -127,10 +127,7 @@ if __name__ == '__main__':
         ## 4. validation 데이터셋의 크기: 전체 데이터셋 길이 - train 데이터셋의 길이
         ## 5. 각 데이터셋의 크기를 구했다면, torch의 random_split 메소드를 사용해봅시다!
         ## ----------------------------------------------------------------
-        dataset_size = len(dataset)
-        train_size = int(dataset_size * 0.8)
-        validation_size = dataset_size - train_size
-        train_dataset, validation_dataset = random_split(dataset, [train_size, validation_size])
+        "ENTER CODE HERE"
         ## ----------------------------------------------------------------
 
         train_dataloader = DataLoader(train_dataset,
@@ -145,24 +142,12 @@ if __name__ == '__main__':
                                     collate_fn=collate_fn)
         logging.info("Training/validation 데이터셋을 성공적으로 불러왔습니다.")
     else:
-        ## TODO 6: 인퍼런스를 위한 데이터로더를 생성해봅시다!
+        ## TODO 2-2: 인퍼런스를 위한 데이터로더를 생성해봅시다!
         ## ----------------------------------------------------------------
         ## 1. 위에 제공된 train, val 데이터로더 객체들을 참고하여 인자값들을 설정해보세요.
         ## 2. 힌트는, 인퍼런스 진행 중에는 데이터의 순서를 랜덤허게 바꾸면 안된다는겁니다!
-        ## 3. 참고로 collate_fn 인자의 역할은 데이터로더가 데이터셋으로부터 배치 단위로
-        ##    값들을 가져올 때, 우리가 그 방식에 관여하고 싶다면 메소드로 설정해주는 것입니다.
-        ##    사실 우리가 사용할 모델은 입력값을 [seq_size, batch_size, input_features=1]
-        ##    형태로 받고 있는데요, 우리는 데이터셋 클래스를 만들때 [num_samples, seq_size,
-        ##    input_features=1]차원으로 데이터셋을 저장하게 했었죠. 따라서 collate_fn을
-        ##    설정해주지 않은 데이터로더로 값을 부르면, 실제로는 [batch_size, seq_size,
-        ##    input_features=1]차원으로 값을 가져오게 됩니다. 이걸 모델의 입력 형태에 맞춰주기
-        ##    위해서 추가적으로 메소드를 적용시켜준 것이라고 이해하시면 되겠습니다.
         ## ----------------------------------------------------------------
-        inference_dataloader = DataLoader(dataset.data,
-                                          batch_size=config['batch_size'],
-                                          shuffle=False,
-                                          drop_last = True,
-                                          collate_fn = collate_fn)
+        "ENTER CODE HERE"
         ## ----------------------------------------------------------------
         logging.info("Inference 데이터셋을 성공적으로 불러왔습니다.")
 

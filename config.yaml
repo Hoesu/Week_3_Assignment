@@ -3,7 +3,7 @@
 data_path: "data/test_data.csv"
 step_size: 100
 noise_std: 1
-train: False
+train: True
 split_ratio: 0.8
 
 # model.py: 모델 초기화에 들어가는 파라미터
