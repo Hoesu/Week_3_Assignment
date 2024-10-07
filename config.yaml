@@ -1,0 +1,27 @@
+# dataset.py: 데이터셋 불러오기에 사용되는 파라미터
+# =======================================
+data_path: "data/test_data.csv"
+step_size: 100
+noise_std: 1
+train: False
+split_ratio: 0.8
+
+# model.py: 모델 초기화에 들어가는 파라미터
+# =======================================
+lstm_size: 128
+latent_size: 20
+input_size: 1
+seq_size: 150
+num_lyears: 1
+batch_size: 10
+attention_size: 2
+sample_reps: 20
+directions: 2
+
+# main.py: 모델 사용에 들어가는 파라미터
+# =======================================
+optimizer_choice: 'AdamW'
+learning_rate: 0.002
+epochs: 10
+lambda_kl: 0
+eta: 0.01
