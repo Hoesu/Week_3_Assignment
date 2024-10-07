@@ -105,8 +105,8 @@ class OutlierDataset(Dataset):
             - 정규화한 데이터를 [총 샘플 수, 윈도우 크기, 1] 차원의 텐서로 반환합니다.
         - Returns
             - 텐서, [총 윈도우 개수, 윈도우 크기, 1]
-
         """
+        
         ## TODO 1-3: 입력 데이터를 [총 윈도우 개수, 윈도우 크기, 1]로 반환해보세요!
         ## ----------------------------------------------------------------
         ## 1. 현재 입력값은 [총 윈도우 개수, 윈도우 크기] 차원의 넘파이 다차원 배열입니다.
@@ -145,7 +145,7 @@ class OutlierDataset(Dataset):
         - Returns
             - 텐서, [총 윈도우 개수, 윈도우 크기, 1]
         """
-        
+
         data_path = self.config['data_path']
         seq_size = self.config['seq_size']
         step_size = self.config['step_size']
