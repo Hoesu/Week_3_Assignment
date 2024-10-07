@@ -2,6 +2,10 @@ import torch
 from torch import nn
 import numpy as np
 
+
+## 관심 있으면 한번 읽어보세요!
+## 큰 공부가 됩니다!
+
 class VAE(nn.Module):
     def __init__(self, config):
         """
